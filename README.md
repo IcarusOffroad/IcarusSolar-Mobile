@@ -20,9 +20,16 @@
 For local desktop testing, serve the folder using `python -m http.server 8000` and open http://localhost:8000. PWA offline installation requires HTTPS (except localhost development). To update cached files after changes, bump CACHE in service-worker.js.
 
 
-## v0.1.1 iPhone touch update
+## v0.1.2 iPhone touch update
 - Disable pinch and double-tap page zoom with viewport settings.
 - Treat rapid navigation button taps as interactions, with 44px minimum targets.
 - Increment offline cache version so installed PWAs refresh their assets.
 - On GitHub upload changed files to repository root, replacing existing versions. Open online once before testing offline.
 - Note: disabling zoom reduces accessibility for users who need magnification.
+
+
+## v0.1.2 changes
+- Added offline estimated moonrise and moonset for the selected date and location. A dash means no event on that local calendar date.
+- Added illumination percentages below previous/current/next moon graphics.
+- Lunar rise/set times use a low-precision analytical model and an approximate horizon correction. Expect differences of several minutes or more from an almanac, especially at high latitudes or near mountains.
+- Updated offline service-worker cache version. After uploading, open the website online, then fully close and reopen the Home Screen app to activate the new cache.
